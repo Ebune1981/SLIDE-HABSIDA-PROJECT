@@ -22,18 +22,22 @@
           <a class="brand-card swiper-slide" href="#"><img src="./icon-acer.png" alt="Acer"></a>
           <a class="brand-card swiper-slide" href="#"><img src="./icon-sony.png" alt="Sony"></a>
           <a class="brand-card swiper-slide" href="#"><img src="./icon-sony.png" alt="Sony"></a>
-          
-          
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <button class="toggle-brands" type="button" aria-expanded="false">Show All</button>
+      <button class="toggle-brands" type="button" aria-expanded="false">
+        <span class="toggle-brands-label">Show All</span>
+        <svg class="toggle-brands-chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+          <path d="m3 6 5 5 5-5" />
+        </svg>
+      </button>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     const brandSection = document.querySelector('.brand-section');
     const brandSliderElement = document.querySelector('.brands-swiper');
     const toggleButton = document.querySelector('.toggle-brands');
+    const toggleButtonLabel = toggleButton.querySelector('.toggle-brands-label');
     let brandSlider;
 
     function initializeMobileSlider() {
@@ -60,7 +64,7 @@
 
     toggleButton.addEventListener('click', () => {
       const isExpanded = brandSection.classList.toggle('is-expanded');
-      toggleButton.textContent = isExpanded ? 'Hide' : 'Show All';
+      toggleButtonLabel.textContent = isExpanded ? 'Hide' : 'Show All';
       toggleButton.setAttribute('aria-expanded', String(isExpanded));
 
       if (isExpanded) {
