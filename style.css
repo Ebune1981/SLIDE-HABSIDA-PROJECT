@@ -105,7 +105,7 @@ body {
   .brands {
     width: min(100% - 32px, 420px);
     margin: 40px auto;
-  }
+    
 
   .slide-title {
     margin-bottom: 18px;
